@@ -1,9 +1,18 @@
 #include<stdio.h>
 void main(){
-    char s[100];
-    printf("Nhap vao chuoi ky tu: ");
-    gets(s);
-    strrev(s);
-    printf("\nChuoi sau khi dao nguoc: %s",s);
+    int s;
+    printf("\nNhap vao so phan tu toi da cua chuoi: ");
+    scanf("%d",&s);
+    char str[s];
+    do{
+        printf("\nNhap vao chuoi: ");
+        fflush(stdin);
+        gets(str);
+        if(strlen(str)>s){
+            printf("\nNhap lai chuoi thoa man dieu kien!");
+        }
+    }while(strlen(str)>s);
+    strrev(str);
+    printf("\nChuoi sau khi dao nguoc: %s",str);
     getch();
 }
